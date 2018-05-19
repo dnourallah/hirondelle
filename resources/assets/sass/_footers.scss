@@ -1,0 +1,50 @@
+// Footers
+$footer-font-size:                      .9rem !default;
+$footer-bg-color:                       rgba($black, .1) !default;
+$footer-margin-top:                     1.25rem !default;
+$footer-padding-top:                    $footer-margin-top !default;
+$footer-head-bg-color:                  #222525 !default;
+$footer-copyright-color:                rgba($white, .6) !default;
+$footer-copyright-bg-color:             rgba($black, .9) !default;
+$footer-body-bg-color:                  $footer-bg-color !default;
+
+
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 328px;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+// Footers
+footer {
+  &.page-footer {
+    bottom: 0;
+    position: absolute;
+    color: $white;
+    width: 100%;
+    background-color: $footer-bg-color;
+
+    .footer-head {
+      background-color: $footer-head-bg-color;
+    }
+    .footer-body {
+      //background-color: $footer-body-bg-color;
+    }
+    .footer-copyright {
+      overflow: hidden;
+      background-color: $footer-copyright-bg-color;
+      font-size: $footer-font-size;
+      color: $footer-copyright-color;
+    }
+    a {
+      color: $white;
+    }
+    p {
+      margin-bottom: 0.4rem;
+    }
+  }
+}

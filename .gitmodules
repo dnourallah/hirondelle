@@ -1,0 +1,3 @@
+[submodule "laravel-cmd"]
+	path = dev/packages/dnourallah/laravel-cmd
+	url = https://github.com/dnourallah/laravel-cmd.git
