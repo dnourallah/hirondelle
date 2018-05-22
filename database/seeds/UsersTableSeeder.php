@@ -14,9 +14,20 @@ class UsersTableSeeder extends Seeder
     public function run()
     {
         factory(User::class, 1)->create([
-            'email' => 'test@test.test',
+            'username'        => 'Admin',
+            'email'           => 'admin@admin.com',
         ]);
+        User::find(1)->assignRole(config('auth.access.users.roles.admin'));
 
+        factory(User::class, 1)->create([
+            'username'        => 'User',
+            'email'           => 'user@user.com',
+        ]);
+        User::find(2)->assignRole(config('auth.access.users.roles.user'));
+
+
+
+/*
         factory(User::class, 1)->create();
 
         DB::table('users')->insert([
@@ -34,5 +45,6 @@ class UsersTableSeeder extends Seeder
             'email' => str_random(10).'@gmail.com',
             'password' => bcrypt('secret'),
         ]);
+*/
     }
 }

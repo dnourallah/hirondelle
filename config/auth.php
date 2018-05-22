@@ -2,6 +2,28 @@
 
 return [
 
+
+    'access' => [
+        'users' => [
+            'roles' => [
+                'public'                => 'Public',
+                'user'                  => 'Registered',
+                'author'                => 'Author',
+                'editor'                => 'Editor',
+                'publisher'             => 'Publisher',
+                'manager'               => 'Manager',
+                'admin'                 => 'Administrator',
+                'super-admin'           => 'Super Administrator',
+                'guest'                 => 'Guest',
+            ]
+        ],
+
+        /*'api' => [
+            'driver' => 'token',
+            'provider' => 'users',
+        ],*/
+    ],
+
     /*
     |--------------------------------------------------------------------------
     | Authentication Defaults

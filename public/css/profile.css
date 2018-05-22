@@ -1,17 +1,18 @@
 /* Profile container */
 
 .profile {
-  margin: 20px 0;
+  margin: 10px 0;
 }
 
 /* Profile sidebar */
 
 .profile-sidebar {
-  padding: 20px 0 10px 0;
+  padding: 10px 0 10px 0;
   background: #fff;
 }
 
 .profile-userpic img {
+  display: block;
   float: none;
   margin: 0 auto;
   width: 50%;
@@ -84,10 +85,6 @@
 .profile-usermenu ul li a:hover {
   background-color: #fafcfd;
   color: #5b9bd1;
-}
-
-.profile-usermenu ul li.active {
-  border-bottom: none;
 }
 
 .profile-usermenu ul li.active a {

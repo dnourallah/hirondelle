@@ -6,7 +6,7 @@
 
 @section('content')
 <div class="row profile">
-    <div class="col-md-3">
+    <div class="col-md-2">
         <div class="profile-sidebar">
             <!-- SIDEBAR USERPIC -->
             <div class="profile-userpic">
@@ -19,7 +19,9 @@
                     {{ Auth::user()->name }}
                 </div>
                 <div class="profile-usertitle-job">
-                    Developer
+                    @foreach (Auth::user()->getRoleNames() as $roleName)
+                        {{ $roleName }}
+                    @endforeach
                 </div>
             </div>
             <!-- END SIDEBAR USER TITLE -->
@@ -31,7 +33,7 @@
             <!-- END SIDEBAR BUTTONS -->
             <!-- SIDEBAR MENU -->
             <div class="profile-usermenu">
-                <ul class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                <ul class="nav flex-column nav-pills nav-stacked" id="v-pills-tab" role="tablist" aria-orientation="vertical">
                     <li class="active">
                         <a href="#">
                             <i class="fas fa-home"></i>
@@ -61,9 +63,16 @@
             <!-- END MENU -->
         </div>
     </div>
-    <div class="col-md-9">
+    <div class="col-md-10">
         <div class="profile-content">
-            Some user related content goes here...
+
+            @hasanyrole(config('auth.access.users.roles.super-admin') . '|' . config('auth.access.users.roles.admin'))
+                I am either a writer or an admin or both!
+            @else
+                I have none of these roles...
+            @endhasanyrole
+
+            <p>Some user related content goes here...</p>
         </div>
     </div>
 </div>

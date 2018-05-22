@@ -5,12 +5,14 @@ namespace App\Models\Auth;
 use App\Models\Auth\Traits\Attributes\UserAttribute;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Spatie\Permission\Traits\HasRoles;
 
 class User extends Authenticatable
 {
     use
         Notifiable,
-        UserAttribute;
+        UserAttribute,
+        HasRoles;
 
     /**
      * The attributes that are mass assignable.

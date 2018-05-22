@@ -1,6 +1,7 @@
 <?php
 
 use Faker\Generator as Faker;
+use App\Models\Auth\User;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,7 +14,7 @@ use Faker\Generator as Faker;
 |
 */
 
-$factory->define(App\Models\Auth\User::class, function (Faker $faker) {
+$factory->define(User::class, function (Faker $faker) {
     return [
         'username' => $faker->userName,
         'first_name' => $faker->firstName,
